@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Library.Views.UcAddJournal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding Source={StaticResource Locator}, Path=AddJournal}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <local:UcJournalsListView Grid.Row="1" Grid.Column="2" Grid.RowSpan="5"/>
+
+        <TextBlock Text="Journals" Grid.Column="2" Style="{Binding Source={StaticResource AddView}}"/>
+
+        <TextBlock Text="Title" Style="{Binding Source={StaticResource AddView}}"/>
+        <TextBox  Text="{Binding AddTitle}" Grid.Column="1" Style="{Binding Source={StaticResource Add}}"/>
+
+        <TextBlock Text="Author" Grid.Row="1" Style="{Binding Source={StaticResource AddView}}"/>
+        <TextBox  Text="{Binding AddAuthor}" Grid.Row="1" Grid.Column="1" Style="{Binding Source={StaticResource Add}}"/>
+
+        <TextBlock Text="Published Month" Grid.Row="2" Style="{Binding Source={StaticResource AddView}}"/>
+        <ComboBox  ItemsSource="{Binding AddPublishedMonth}" SelectedValue="{Binding SelectedJournalMonth}" Grid.Row="2" Grid.Column="1" Style="{Binding Source={StaticResource AddCombo}}"/>
+
+        <TextBlock Text="Journal Type" Grid.Row="3" Style="{Binding Source={StaticResource AddView}}"/>
+        <ComboBox  ItemsSource="{Binding AddJournalType}" SelectedValue="{Binding SelectedJournalType}" Grid.Row="3" Grid.Column="1" Style="{Binding Source={StaticResource AddCombo}}"/>
+
+        <TextBlock Text="Price" Grid.Row="4" Style="{Binding Source={StaticResource AddView}}"/>
+        <TextBox  Text="{Binding AddPrice}" Grid.Row="4" Grid.Column="1" Style="{Binding Source={StaticResource Add}}"/>
+
+        <Button Content="Add Journal" Command="{Binding AddAction}" Grid.Row="5" Grid.ColumnSpan="2" Style="{Binding Source={StaticResource AddBookJournal}}"/>
+        
+    </Grid>
+</UserControl>

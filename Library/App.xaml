@@ -1,0 +1,84 @@
+<Application x:Class="Library.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:Library" StartupUri="MainWindow.xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
+  <Application.Resources>
+    <ResourceDictionary>
+            
+            <!--///////Text Block\\\\\\-->
+            <Style x:Key="BaseTextBlock" TargetType="TextBlock">
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="TextAlignment" Value="Center"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+            </Style>
+
+            <Style x:Key="ListView" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlock}">
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+
+            <Style x:Key="AddView" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlock}">
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+
+            <Style x:Key="Homepage" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlock}">
+                <Setter Property="FontSize" Value="50"/>
+            </Style>
+
+            <Style x:Key="Type" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlock}">
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+
+            <Style x:Key="Text" TargetType="TextBlock">
+                <Setter Property="TextAlignment" Value="Center"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+            </Style>
+            <!--///////Text Block\\\\\\-->
+
+            <!--///////Button\\\\\\-->
+            <Style x:Key="AddBtn" TargetType="Button">
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Bottom"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+
+            <Style x:Key="AddJournal" TargetType="Button" BasedOn="{StaticResource AddBtn}">
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+            </Style>
+
+            <Style x:Key="AddBook" TargetType="Button" BasedOn="{StaticResource AddBtn}">
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+            </Style>
+
+            <Style x:Key="AddBookJournal" TargetType="Button" BasedOn="{StaticResource AddBtn}">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+
+            <Style x:Key="Remove" TargetType="Button" BasedOn="{StaticResource AddBtn}">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+
+            <Style x:Key="Sale" TargetType="Button" BasedOn="{StaticResource AddBtn}">
+                <Setter Property="VerticalAlignment" Value="Top"/>
+            </Style>
+            <!--///////Button\\\\\\-->
+            
+            <Style x:Key="Add" TargetType="TextBox">
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+
+            <Style x:Key="AddCombo" TargetType="ComboBox">
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+
+            <Style TargetType="MenuItem">
+                <Setter Property="Foreground" Value="Blue"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+
+            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:Library.ViewModel" />
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
